@@ -3,14 +3,7 @@
     <apiVersion>59.0</apiVersion>
     <isExposed>true</isExposed>
     <targets>
-        <!-- Makes the component available on Lead record pages -->
         <target>lightning__RecordPage</target>
         <target>lightning__AppPage</target>
     </targets>
-    <targetConfigs>
-        <targetConfig targets="lightning__RecordPage">
-            <!-- Passes the current record Id automatically -->
-            <property name="recordId" type="String" label="Record Id"/>
-        </targetConfig>
-    </targetConfigs>
 </LightningComponentBundle>

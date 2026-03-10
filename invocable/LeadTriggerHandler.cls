@@ -15,13 +15,13 @@ public with sharing class LeadTriggerHandler {
     public void run() {
         if (Trigger.isBefore) {
             if (Trigger.isInsert)  { onBeforeInsert(Trigger.new); }
-            if (Trigger.isUpdate)  { onBeforeUpdate(Trigger.new, Trigger.oldMap); }
+            if (Trigger.isUpdate)  { onBeforeUpdate(Trigger.new, (Map<Id, Lead>) Trigger.oldMap); }
             if (Trigger.isDelete)  { onBeforeDelete(Trigger.old); }
         }
 
         if (Trigger.isAfter) {
             if (Trigger.isInsert)   { onAfterInsert(Trigger.new); }
-            if (Trigger.isUpdate)   { onAfterUpdate(Trigger.new, Trigger.oldMap); }
+            if (Trigger.isUpdate)   { onAfterUpdate(Trigger.new, (Map<Id, Lead>) Trigger.oldMap); }
             if (Trigger.isDelete)   { onAfterDelete(Trigger.old); }
             if (Trigger.isUndelete) { onAfterUndelete(Trigger.new); }
         }

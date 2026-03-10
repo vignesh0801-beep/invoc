@@ -1,10 +1,12 @@
 import { LightningElement, api, track } from 'lwc';
-import convertLead from '@salesforce/apex/LeadConversionHandler.convertLeads';
+import convertLead from '@salesforce/apex/LeadConversionHandler.convertLeadFromLWC';
 
 export default class LeadConvertButton extends LightningElement {
 
+    // The current Lead record Id passed in from the page
     @api recordId;
 
+    // Reactive state
     @track isProcessing = false;
     @track isSuccess    = false;
     @track errorMessage = null;

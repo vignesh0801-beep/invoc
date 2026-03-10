@@ -1,0 +1,26 @@
+<!-- leadConvertButton.html -->
+<template>
+    <lightning-card title="Lead Actions">
+        <div class="slds-p-around_medium">
+            <lightning-button
+                label={buttonLabel}
+                onclick={handleConvert}
+                disabled={isProcessing}
+                variant={buttonVariant}
+                class="convert-btn"
+            ></lightning-button>
+
+            <template if:true={isSuccess}>
+                <div class="slds-notify slds-notify_toast slds-theme_success slds-m-top_small">
+                    <p>Lead converted successfully!</p>
+                </div>
+            </template>
+
+            <template if:true={errorMessage}>
+                <div class="slds-notify slds-notify_toast slds-theme_error slds-m-top_small">
+                    <p>{errorMessage}</p>
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>
